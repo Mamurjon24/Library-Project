@@ -1,5 +1,5 @@
 package org.example.enums;
 
-public enum ProfileRole {
+public enum StudentRole {
     USER, ADMIN
 }

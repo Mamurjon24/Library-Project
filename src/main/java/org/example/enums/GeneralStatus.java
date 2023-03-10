@@ -1,2 +1,5 @@
-package org.example.enums;public enum GeneralStatus {
+package org.example.enums;
+
+public enum GeneralStatus {
+    ACTIVE, BLOCK
 }
