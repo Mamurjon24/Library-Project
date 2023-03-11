@@ -15,7 +15,7 @@ public class StudentBook {
     private Integer id;
     private Integer student_id;
     private Integer book_id;
-    private LocalDate TakenDate;
+    private LocalDate takenDate;
     private Status status;
     private LocalDate returnedDate;
     private String duration;

@@ -20,5 +20,6 @@ public class Student {
     private LocalDateTime createdDate;
     private GeneralStatus generalStatus;
     private StudentRole studentRole;
+    private boolean visitable;
 
 }

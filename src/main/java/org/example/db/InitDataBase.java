@@ -1,25 +1,28 @@
 package org.example.db;
-
 import org.example.dto.Student;
 import org.example.enums.GeneralStatus;
 import org.example.enums.StudentRole;
+import org.example.repository.StudentRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
-
+@Component
 public class InitDataBase {
+    @Autowired
+    private StudentRepository studentRepository;
     public void adminInit() {
         Student student = new Student();
         student.setName("Admin");
-        student.setSurname("Adminjon");
+        student.setSurname("Adminov");
         student.setPhone("123");
         student.setCreatedDate(LocalDateTime.now());
         student.setGeneralStatus(GeneralStatus.ACTIVE);
         student.setStudentRole(StudentRole.ADMIN);
-
-        Profile profile1 = profileRepository.getProfileByPhone(profile.getPhone());
-        if (profile1 != null) {
+        Student student1 = studentRepository.getStudentByPhone(student.getPhone());
+        if (student1 != null) {
             return;
         }
-        profileRepository.saveProfile(profile);
+        studentRepository.saveStudent(student);
     }
 }

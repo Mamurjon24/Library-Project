@@ -1,12 +1,10 @@
 package org.example.dto;
-
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.example.enums.GeneralStatus;
-
 import java.time.LocalDate;
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Setter
