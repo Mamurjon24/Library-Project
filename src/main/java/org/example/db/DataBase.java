@@ -26,10 +26,10 @@ public class DataBase {
         jdbcTemplate.execute("create table if not exists studentBook(id serial primary key," +
                 "                                                    student_id int not null," +
                 "                                                    book_id int not null," +
-                "                                                    taken_date timestamp," +
+                "                                                    taken_date timestamp default now()," +
                 "                                                    status varchar," +
-                "                                                    returned_date timestamp," +
-                "                                                    duration varchar(15) not null," +
+                "                                                    returned_date varchar(20) not null," +
+                "                                                    duration varchar(20) not null," +
                 "                                                    foreign key(student_id) references  book(id)," +
                 "                                                    foreign key(book_id) references  student(id))");
 

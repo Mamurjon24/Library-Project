@@ -31,13 +31,8 @@ public class StudentService {
         student.setCreatedDate(LocalDateTime.now());
         student.setStudentRole(StudentRole.USER);
         student.setGeneralStatus(GeneralStatus.ACTIVE);
-        int n = studentRepository.saveStudent(student);
-        if (n != 0) {
-            System.out.println("Student successfully added");
-            return;
-        } else {
-            System.out.println("ERROR");
-        }
+        studentRepository.saveStudent(student);
+
     }
     public void deleteStudent(Integer num) {
         Student exist = studentRepository.getStudentById(num);
@@ -47,4 +42,6 @@ public class StudentService {
         }
         studentRepository.changeVisitable(num);
     }
+
+
 }

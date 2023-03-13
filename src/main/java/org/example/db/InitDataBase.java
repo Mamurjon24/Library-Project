@@ -19,10 +19,12 @@ public class InitDataBase {
         student.setCreatedDate(LocalDateTime.now());
         student.setGeneralStatus(GeneralStatus.ACTIVE);
         student.setStudentRole(StudentRole.ADMIN);
+       /*
         Student student1 = studentRepository.getStudentByPhone(student.getPhone());
         if (student1 != null) {
             return;
         }
+        */
         studentRepository.saveStudent(student);
     }
 }

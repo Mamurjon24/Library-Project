@@ -12,9 +12,11 @@ import java.util.List;
 public class BookService {
     @Autowired
     private BookRepository bookRepository;
-    public void getBookList() {
+
+    public List<Book> getBookList() {
         List<Book> bookList = bookRepository.getBookList();
         bookList.forEach(System.out::println);
+        return bookList;
     }
 
     public void adminAddBook(String title, String nameAuthor, Integer amount, String publishYear) {
@@ -27,22 +29,17 @@ public class BookService {
         book.setAuthor(nameAuthor);
         book.setAmount(amount);
         book.setPublishYear(LocalDate.parse(publishYear));
-        int n = bookRepository.saveBook(book);
-        if (n != 0) {
-            System.out.println("Book successfully added");
-            return;
-        } else {
-            System.out.println("ERROR");
-        }
+        bookRepository.saveBook(book);
     }
-
 
     public void deleteBook(Integer num) {
         Book exist = bookRepository.getBooktById(num);
-        if (exist != null){
+        if (exist != null) {
             System.out.println("Book is not Found");
             return;
         }
         bookRepository.changeVisitable(num);
     }
+
+
 }

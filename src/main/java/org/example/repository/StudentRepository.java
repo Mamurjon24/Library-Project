@@ -25,18 +25,25 @@ public class StudentRepository {
                 .stream().findAny().orElse(null);
     }
 
-    public Integer saveStudent(Student student) {
-        Integer result = jdbcTemplate.update("INSERT INTO Student VALUES (?,?,?,?,?,?)",student.getName(),student.getSurname(),student.getPhone(),
-                student.getCreatedDate(),student.getGeneralStatus(),student.getStudentRole());
-        return result;
+    public void saveStudent(Student student) {
+        try {
+            jdbcTemplate.update("INSERT INTO Student VALUES (?,?,?,?,?,?)",student.getName(),student.getSurname(),student.getPhone(),
+                    student.getCreatedDate(),student.getGeneralStatus(),student.getStudentRole());
+            System.out.println("Student successfully added");
+        }catch (Exception e){
+            System.out.println("ERROR :) Student's not added");
+        }
     }
 
     public List<Student> getStudentList() {
         return jdbcTemplate.query("SELECT * FROM Student", new StudentMapper());
     }
 
-    public Integer changeVisitable(Integer id) {
-        Integer result = jdbcTemplate.update("UPDATE Student SET Visitable = FALSE WHERE id=?",id);
-        return result;
+    public void changeVisitable(Integer id) {
+        try {
+            jdbcTemplate.update("UPDATE Student SET Visitable = FALSE WHERE id=?",id);
+        }catch (Exception e){
+            System.out.println("ERROR :) Student Visitable not change");
+        }
     }
 }
