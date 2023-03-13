@@ -4,10 +4,10 @@ import org.example.enums.GeneralStatus;
 import org.example.enums.StudentRole;
 import org.example.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import java.time.LocalDateTime;
-@Component
+@Repository
 public class InitDataBase {
     @Autowired
     private StudentRepository studentRepository;
