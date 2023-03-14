@@ -6,6 +6,7 @@ import org.example.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 @Repository
 public class InitDataBase {
@@ -16,15 +17,13 @@ public class InitDataBase {
         student.setName("Admin");
         student.setSurname("Adminov");
         student.setPhone("123");
-        student.setCreatedDate(LocalDateTime.now());
+        student.setCreatedDate(LocalDate.now());
         student.setGeneralStatus(GeneralStatus.ACTIVE);
         student.setStudentRole(StudentRole.ADMIN);
-       /*
         Student student1 = studentRepository.getStudentByPhone(student.getPhone());
         if (student1 != null) {
             return;
         }
-        */
         studentRepository.saveStudent(student);
     }
 }

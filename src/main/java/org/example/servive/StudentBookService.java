@@ -46,6 +46,7 @@ public class StudentBookService {
         bookList.forEach(System.out::println);
     }
 
+/*
     public void returnBook(Integer id) {
         List<Book> bookList = bookService.getBookList();
         Optional<Book> optional = bookList.stream().filter(book -> book.getId().equals(id)).findAny();
@@ -58,4 +59,5 @@ public class StudentBookService {
             System.out.println("Book Not Found or qolmaganskiy brat:)");
         }
     }
+*/
 }

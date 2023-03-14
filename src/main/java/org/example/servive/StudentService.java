@@ -6,6 +6,7 @@ import org.example.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -28,7 +29,7 @@ public class StudentService {
         student.setName(name);
         student.setSurname(surName);
         student.setPhone(telnum);
-        student.setCreatedDate(LocalDateTime.now());
+        student.setCreatedDate(LocalDate.now());
         student.setStudentRole(StudentRole.USER);
         student.setGeneralStatus(GeneralStatus.ACTIVE);
         studentRepository.saveStudent(student);

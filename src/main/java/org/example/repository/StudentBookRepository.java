@@ -31,7 +31,7 @@ public class StudentBookRepository {
 
     public List<StudentTakenBookList> getTakenBookList(Integer id) {
         return jdbcTemplate.query("SELECT sb.id,sb.taken_date,b.title,b.author FROM StudentBook AS sb INNER JOIN Book AS b ON sb.book_id = b.id" +
-                "WHERE sb.studen_id=?", new Object[]{id}, new StudentTakenBookListMapper);
+                "WHERE sb.studen_id=?", new Object[]{id}, new StudentTakenBookListMapper());
     }
 
     public void returnBook(String returdDate,String duration,Integer id) {

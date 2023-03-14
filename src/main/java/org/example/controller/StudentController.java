@@ -1,4 +1,5 @@
 package org.example.controller;
+
 import org.example.container.ComponentContainer;
 import org.example.dto.Student;
 import org.example.repository.StudentBookRepository;
@@ -6,6 +7,7 @@ import org.example.servive.StudentBookService;
 import org.example.servive.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+
 import java.util.Scanner;
 
 @Controller
@@ -30,7 +32,7 @@ public class StudentController {
                     TakenBook();
                     break;
                 case 4:
-                    ReturnBook();
+                    //ReturnBook();
                     break;
                 case 5:
                     History();
@@ -58,11 +60,13 @@ public class StudentController {
         studentBookService.takenBook();
     }
 
+/*
     private void ReturnBook() {
         System.out.print("Enter Book id:");
         Integer id = intScanner.nextInt();
         studentBookService.returnBook(id);
     }
+*/
 
     private void History() {
 

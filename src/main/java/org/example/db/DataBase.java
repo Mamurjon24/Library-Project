@@ -19,14 +19,14 @@ public class DataBase {
                 "                                                    name varchar," +
                 "                                                    surname varchar," +
                 "                                                    phone varchar(13) not null," +
-                "                                                    created_date timestamp default now()," +
+                "                                                    created_date date default now()," +
                 "                                                    general_status varchar(20)," +
                 "                                                    student_role varchar(10)," +
                 "                                                    visible boolean default true)");
         jdbcTemplate.execute("create table if not exists studentBook(id serial primary key," +
                 "                                                    student_id int not null," +
                 "                                                    book_id int not null," +
-                "                                                    taken_date timestamp default now()," +
+                "                                                    taken_date date default now()," +
                 "                                                    status varchar," +
                 "                                                    returned_date varchar(20) not null," +
                 "                                                    duration varchar(20) not null," +

@@ -27,10 +27,11 @@ public class StudentRepository {
 
     public void saveStudent(Student student) {
         try {
-            jdbcTemplate.update("INSERT INTO Student VALUES (?,?,?,?,?,?)",student.getName(),student.getSurname(),student.getPhone(),
+            jdbcTemplate.update("INSERT INTO Student(name,surname,phone,created_date,general_status,student_role) VALUES (?,?,?,?,?,?)",student.getName(),student.getSurname(),student.getPhone(),
                     student.getCreatedDate(),student.getGeneralStatus(),student.getStudentRole());
             System.out.println("Student successfully added");
         }catch (Exception e){
+            e.printStackTrace();
             System.out.println("ERROR :) Student's not added");
         }
     }

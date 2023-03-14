@@ -7,7 +7,8 @@ import lombok.Setter;
 import org.example.enums.GeneralStatus;
 import org.example.enums.StudentRole;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Setter
@@ -17,7 +18,7 @@ public class Student {
     private String name;
     private String surname;
     private String phone;
-    private LocalDateTime createdDate;
+    private LocalDate createdDate;
     private GeneralStatus generalStatus;
     private StudentRole studentRole;
     private boolean visitable;
